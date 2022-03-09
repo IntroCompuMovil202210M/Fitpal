@@ -13,6 +13,9 @@
             android:name=".PantallaRegistro1"
             android:exported="false" />
         <activity
+            android:name=".PantallaRegistro2"
+            android:exported="false" />
+        <activity
             android:name=".PantallaPrincipal"
             android:exported="false" />
         <activity
