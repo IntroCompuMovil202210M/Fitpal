@@ -30,7 +30,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView2"
@@ -46,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button2"
@@ -75,6 +76,14 @@
         app:layout_constraintHorizontal_bias="0.707"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="215dp"
+        android:layout_height="74dp"
+        app:srcCompat="@mipmap/r4_4"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="225dp" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -89,7 +98,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="292dp"
+        android:layout_marginBottom="264dp"
         android:text="    Gracias por registrarte en FitPal.\n
         Podras conocer muchas personas que como tu, aman\n
 el deporte, los buenos habitos y conocer personas nuevas.\n
@@ -98,7 +107,6 @@ Diviertete y recuerda que nuestro equipo esta para ti.\n
 A continuacion, ingresa utilizando tu correo y contraseña."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent" />
 
 

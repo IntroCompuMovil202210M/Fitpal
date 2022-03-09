@@ -46,6 +46,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
@@ -95,6 +96,14 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
         app:layout_constraintVertical_bias="0.466" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="220dp"
+        android:layout_height="107dp"
+        app:srcCompat="@mipmap/r1_4"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="207dp" />
+
     <Button
         android:id="@+id/anterior1"
         android:layout_width="108dp"
@@ -110,21 +119,6 @@
         app:layout_constraintEnd_toStartOf="@+id/siguiente1"
         app:layout_constraintHorizontal_bias="0.956"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto"
-        android:text="En camino..."
-        android:textColor="@color/fitblack"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.439" />
 
     <TextView
         android:id="@+id/textView3"
