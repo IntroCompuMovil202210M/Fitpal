@@ -10,11 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitPal">
         <activity
+            android:name=".PantallaLogin"
+            android:exported="true" />
+        <activity
             android:name=".PantallaRegistro3"
             android:exported="false" />
         <activity
             android:name=".PantallaRegistro1"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".PantallaRegistro2"
             android:exported="false" />

@@ -10,6 +10,7 @@
         android:id="@+id/editTextTextPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:ems="10"
         android:hint="Confirmar contraseña"
         android:inputType="textPassword"
@@ -46,6 +47,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
@@ -79,27 +81,10 @@
         app:layout_constraintVertical_bias="0.066" />
 
     <Button
-        android:id="@+id/siguiente1"
-        android:layout_width="108dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/fitpal"
-        android:fontFamily="@font/roboto"
-        android:text="Siguiente"
-        android:textAllCaps="false"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.749"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
-        app:layout_constraintVertical_bias="0.466" />
-
-    <Button
         android:id="@+id/anterior1"
         android:layout_width="108dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="68dp"
         android:layout_marginBottom="120dp"
         android:backgroundTint="@color/fitpal"
         android:fontFamily="@font/roboto"
@@ -108,7 +93,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/siguiente1"
-        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -135,5 +120,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/siguiente1"
+        android:layout_width="108dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="120dp"
+        android:backgroundTint="@color/fitpal"
+        android:fontFamily="@font/roboto"
+        android:text="Siguiente"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

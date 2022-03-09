@@ -79,7 +79,7 @@
         app:layout_constraintVertical_bias="0.213" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/registro"
         android:layout_width="158dp"
         android:layout_height="53dp"
         android:backgroundTint="@color/fitwhite"
@@ -118,7 +118,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/registro"
         app:layout_constraintVertical_bias="0.714" />
 
     <TextView
