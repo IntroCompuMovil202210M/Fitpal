@@ -51,7 +51,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/anterior4"
         android:layout_width="108dp"
         android:layout_height="48dp"
         android:layout_marginStart="84dp"
@@ -65,13 +65,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/siguiente4"
         android:layout_width="115dp"
         android:layout_height="48dp"
         android:layout_marginStart="84dp"
         android:layout_marginBottom="120dp"
         android:backgroundTint="@color/fitpal"
         android:text="Finalizar"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.707"
@@ -107,11 +108,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="264dp"
         android:text="    Gracias por registrarte en FitPal.\n
-        Podras conocer muchas personas que como tu, aman\n
+ Podras conocer muchas personas que como tu, aman\n
 el deporte, los buenos habitos y conocer personas nuevas.\n
 Diviertete y recuerda que nuestro equipo esta para ti.\n
 
 A continuacion, ingresa utilizando tu correo y contraseña."
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

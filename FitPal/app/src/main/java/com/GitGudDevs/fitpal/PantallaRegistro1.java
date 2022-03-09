@@ -27,5 +27,14 @@ public class PantallaRegistro1 extends AppCompatActivity {
 
             }
         });
+
+        siguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(PantallaRegistro1.this, PantallaRegistro2.class);
+                startActivity(intent);
+
+            }
+        });
     }
 }

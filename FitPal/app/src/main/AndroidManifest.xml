@@ -22,6 +22,9 @@
             android:name=".PantallaRegistro2"
             android:exported="false" />
         <activity
+            android:name=".PantallaRegistro4"
+            android:exported="false" />
+        <activity
             android:name=".PantallaPrincipal"
             android:exported="false" />
         <activity
