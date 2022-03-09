@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">FitPal</string>
+
+    <string-array name="Ejercicios">
+        <item> Deportista</item>
+        <item> Aficionado</item>
+        <item> Amateur</item>
+    </string-array>
+
+    <string-array name="Deporte">
+        <item> Atletismo</item>
+        <item> Gimnasio</item>
+        <item> Boxing</item>
+        <item> Futbol</item>
+        <item> Aerobicos</item>
+    </string-array>
+
+
 </resources>
