@@ -15,5 +15,11 @@
         <item> Aerobicos</item>
     </string-array>
 
+    <string-array name="FiltroMapa">
+        <item> Actividades a 5km</item>
+        <item> Actividades a 10km</item>
+        <item> Actividades a 15km</item>
+    </string-array>
+
 
 </resources>

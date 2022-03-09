@@ -25,5 +25,16 @@ public class PantallaLogin extends AppCompatActivity {
 
             }
         });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(PantallaLogin.this, PantallaPrincipal.class);
+                startActivity(intent);
+
+            }
+        });
+
+
     }
 }
