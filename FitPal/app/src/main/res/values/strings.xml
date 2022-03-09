@@ -20,6 +20,19 @@
         <item> Actividades a 10km</item>
         <item> Actividades a 15km</item>
     </string-array>
+    <string-array name="Busqueda">
+        <item> Fabian Rojas</item>
+    </string-array>
+    <string-array name="Amigos">
+        <item> Fabian Rojas</item>
+    </string-array>
+    <string-array name="Mensajes">
+        <item> Buena mi hermano, ¿Por que no va a entrenar?</item>
+    </string-array>
+    <string-array name="ListaEventos">
+        <item> Practica Futbol 5 - Bosa Centro - Asistire</item>
+        <item> Caslistenia - Bosa La Despensa - Cancelado</item>
+    </string-array>
 
 
 </resources>

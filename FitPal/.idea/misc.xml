@@ -3,17 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/drawable/bordes.xml" value="0.2985" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout-v31/activity_pantalla_login.xml" value="0.23772609819121446" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_login.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_login1.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_perfil.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_principal.xml" value="0.33" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro1.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro2.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro3.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro4.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/aulasingenieria/Desktop/ProyectoCompuMovil202210/Fitpal/FitPal/app/src/main/res/layout/activity_amigos.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/aulasingenieria/Desktop/ProyectoCompuMovil202210/Fitpal/FitPal/app/src/main/res/layout/activity_buscar_perfil.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/aulasingenieria/Desktop/ProyectoCompuMovil202210/Fitpal/FitPal/app/src/main/res/layout/activity_chat.xml" value="0.25" />
+        <entry key="..\:/Users/aulasingenieria/Desktop/ProyectoCompuMovil202210/Fitpal/FitPal/app/src/main/res/layout/activity_lista_eventos.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/aulasingenieria/Desktop/ProyectoCompuMovil202210/Fitpal/FitPal/app/src/main/res/layout/activity_main.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/aulasingenieria/Desktop/ProyectoCompuMovil202210/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_login1.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/aulasingenieria/Desktop/ProyectoCompuMovil202210/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_perfil.xml" value="0.25" />
+        <entry key="..\:/Users/aulasingenieria/Desktop/ProyectoCompuMovil202210/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_principal.xml" value="0.33" />
+        <entry key="..\:/Users/aulasingenieria/Desktop/ProyectoCompuMovil202210/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro1.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/aulasingenieria/Desktop/ProyectoCompuMovil202210/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro2.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/aulasingenieria/Desktop/ProyectoCompuMovil202210/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro3.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/aulasingenieria/Desktop/ProyectoCompuMovil202210/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro4.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/aulasingenieria/Desktop/ProyectoCompuMovil202210/Fitpal/FitPal/app/src/main/res/layout/activity_perfil_encontrado.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>
