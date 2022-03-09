@@ -232,7 +232,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/fitpal"
-                app:srcCompat="@mipmap/Search_Icon_BG" />
+                app:srcCompat="@mipmap/search_icon_bg" />
 
             <ImageButton
                 android:id="@+id/imageButton10"
@@ -240,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/fitpal"
-                app:srcCompat="@mipmap/World_Events_Icon_BG" />
+                app:srcCompat="@mipmap/world_events_icon_bg" />
 
             <ImageButton
                 android:id="@+id/imageButton11"
@@ -248,7 +248,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/fitpal"
-                app:srcCompat="@mipmap/Profile_Icon_BG" />
+                app:srcCompat="@mipmap/profile_icon_bg" />
         </LinearLayout>
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
