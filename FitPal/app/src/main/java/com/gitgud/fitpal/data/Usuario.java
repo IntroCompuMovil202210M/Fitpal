@@ -8,5 +8,5 @@ public class Usuario {
     private String nombre;
     private String apellido;
     private String biografia;
-    private ArrayList<Deporte> deportes;
+    private ArrayList<String> deportes;
 }
