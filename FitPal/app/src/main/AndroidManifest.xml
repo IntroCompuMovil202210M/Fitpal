@@ -41,6 +41,12 @@
             android:name=".HuellaActivity"
             android:exported="false" />
         <activity
+            android:name=".MiPerfil"
+            android:exported="false" />
+        <activity
+            android:name=".ModificarPerfil"
+            android:exported="false" />
+        <activity
             android:name=".Splash"
             android:exported="true"
             android:theme="@style/Theme.SplashScreen">
