@@ -35,25 +35,25 @@ public class HuellaActivity extends AppCompatActivity {
 
             // this means we can use biometric sensor
             case BiometricManager.BIOMETRIC_SUCCESS:
-                msgtex.setText("You can use the fingerprint sensor to login");
+                msgtex.setText("Puedes usar tu huella para iniciar sesión");
                 msgtex.setTextColor(Color.parseColor("#fafafa"));
                 break;
 
             // this means that the device doesn't have fingerprint sensor
             case BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE:
-                msgtex.setText("This device doesnot have a fingerprint sensor");
+                msgtex.setText("Este dispositivo no posee sensor de huella");
                 loginbutton.setVisibility(View.GONE);
                 break;
 
             // this means that biometric sensor is not available
             case BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE:
-                msgtex.setText("The biometric sensor is currently unavailable");
+                msgtex.setText("El sensor de huella está deshabilitado");
                 loginbutton.setVisibility(View.GONE);
                 break;
 
             // this means that the device doesn't contain your fingerprint
             case BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED:
-                msgtex.setText("Your device doesn't have fingerprint saved,please check your security settings");
+                msgtex.setText("Tu dispositivo no tiene una huella guardada,por favor dirígete a los ajustes de seguridad");
                 loginbutton.setVisibility(View.GONE);
                 break;
         }
@@ -71,8 +71,8 @@ public class HuellaActivity extends AppCompatActivity {
             @Override
             public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
-                Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
-                loginbutton.setText("Login Successful");
+                Toast.makeText(getApplicationContext(), "Sesión iniciada", Toast.LENGTH_SHORT).show();
+                loginbutton.setText("Sesión iniciada");
             }
 
             @Override
@@ -83,7 +83,7 @@ public class HuellaActivity extends AppCompatActivity {
         // creating a variable for our promptInfo
         // BIOMETRIC DIALOG
         final BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder().setTitle("GFG")
-                .setDescription("Use your fingerprint to login ").setNegativeButtonText("Cancel").build();
+                .setDescription("Usa tu huella para iniciar sesión ").setNegativeButtonText("Cancelar").build();
         loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
