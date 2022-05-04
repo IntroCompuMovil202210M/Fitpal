@@ -34,7 +34,7 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
+        user = mAuth.getCurrentUser();
         setContentView(R.layout.activity_splash);
     }
 
@@ -56,6 +56,7 @@ public class Splash extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                     if (task.isSuccessful()) {
                                         for (QueryDocumentSnapshot document : task.getResult()) {
+<<<<<<< Updated upstream
                                             if (user.getEmail().equals(document.getData().get("correo"))) {
 
                                                 if ((boolean) document.getData().get("registroCompleto")) {
@@ -79,6 +80,10 @@ public class Splash extends AppCompatActivity {
                                                             }
                                                         });
                                                     }
+=======
+                                            if(user.getEmail().equals(document.getData().get("correo").toString())){
+                                                if((boolean) document.getData().get("registroCompleto")){
+>>>>>>> Stashed changes
                                                     startActivity(new Intent(Splash.this, MainActivity.class));
                                                     finish();
                                                 } else {

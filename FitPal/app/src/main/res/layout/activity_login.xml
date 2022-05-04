@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:text="@string/cuenta_existe"
             android:textAlignment="center"
-            android:paddingTop="@dimen/common_padding_default"/>
+            android:paddingTop="@dimen/common_padding_default" />
     </LinearLayout>
 
     <ImageView
