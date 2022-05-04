@@ -22,7 +22,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitPal">
-
+        <activity
+            android:name=".UploadImageActivity"
+            android:exported="false" />
         <activity
             android:name=".Mapa"
             android:exported="false" />
@@ -54,7 +56,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.fitpal.fileprovider"
+            android:authorities="com.gitgud.fitpal.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
