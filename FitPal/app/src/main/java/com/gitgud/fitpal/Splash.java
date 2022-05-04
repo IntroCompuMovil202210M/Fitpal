@@ -62,7 +62,7 @@ public class Splash extends AppCompatActivity {
                                                     startActivity(new Intent(Splash.this, Mapa.class));
                                                     finish();
                                                 } else {
-                                                    startActivity(new Intent(Splash.this, Mapa.class));
+                                                    startActivity(new Intent(Splash.this, CompleteRegister.class));
                                                     finish();
                                                 }
                                             }

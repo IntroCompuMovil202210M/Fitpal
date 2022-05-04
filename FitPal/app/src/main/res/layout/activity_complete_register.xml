@@ -120,7 +120,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/bt_login"
+            android:id="@+id/bt_register_a"
             android:layout_width="wrap_content"
             android:layout_height="64dp"
             android:paddingTop="@dimen/common_padding_default"

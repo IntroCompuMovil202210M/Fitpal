@@ -111,7 +111,7 @@ public class RegisterActivity extends AppCompatActivity {
                                             Usuario nuevoUsuario = new Usuario();
                                             db.collection("Usuario").document(correo).set(nuevoUsuario);
                                             Toast.makeText(RegisterActivity.this, "¡Registro Exitoso!", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                            Intent intent = new Intent(RegisterActivity.this, CompleteRegister.class);
                                             startActivity(intent);
                                             finish();
                                         }
