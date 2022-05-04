@@ -23,7 +23,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitPal">
         <activity
-            android:name=".MiPerfil"
+            android:name=".HuellaActivity"
             android:exported="false" />
         <activity
             android:name=".Mapa"

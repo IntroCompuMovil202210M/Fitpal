@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2075" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable-v24/person_add-48px.xml" value="0.2075" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.115" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.123" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_baseline_chat_24.xml" value="0.123" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.123" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.1285" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_baseline_sports_basketball_24.xml" value="0.1285" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_fitpal_letras.xml" value="0.123" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1285" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/splash.xml" value="0.123" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/splash_ic_background.xml" value="0.1285" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/splashscreen.xml" value="0.115" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/font/league_gothic.xml" value="0.20092592592592592" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/layout-w936dp/activity_login.xml" value="0.15" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/layout/activity_splash.xml" value="0.22" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.22" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/menu/navigation.xml" value="0.18" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.115" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.115" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/mipmap-anydpi-v26/splash_ic.xml" value="0.1285" />
+        <entry key="..\:/Users/Usuario/Desktop/Fitpal/FitPal/app/src/main/res/drawable/location.xml" value="0.3085" />
+        <entry key="..\:/Users/Usuario/Desktop/Fitpal/FitPal/app/src/main/res/layout/activity_huella.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Usuario/Desktop/Fitpal/FitPal/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Usuario/Desktop/Fitpal/FitPal/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Usuario/Desktop/Fitpal/FitPal/app/src/main/res/layout/activity_mapa.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Usuario/Desktop/Fitpal/FitPal/app/src/main/res/layout/activity_register.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/Usuario/Desktop/Fitpal/FitPal/app/src/main/res/layout/activity_splash.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/Usuario/Desktop/Fitpal/FitPal/app/src/main/res/layout/finger_print.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Usuario/Desktop/Fitpal/FitPal/app/src/main/res/layout/fragment_lista_chats.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Usuario/Desktop/Fitpal/FitPal/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2115" />
+        <entry key="..\:/Users/Usuario/Desktop/Fitpal/FitPal/app/src/main/res/xml/provider_paths.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
