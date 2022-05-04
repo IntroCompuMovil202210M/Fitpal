@@ -1,38 +1,25 @@
 <resources>
     <string name="app_name">FitPal</string>
+    <string name="app_name_up">FITPAL</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="registro">REGISTRO</string>
 
-    <string-array name="Ejercicios">
-        <item> Deportista</item>
-        <item> Aficionado</item>
-        <item> Amateur</item>
-    </string-array>
-
-    <string-array name="Deporte">
-        <item> Atletismo</item>
-        <item> Gimnasio</item>
-        <item> Boxing</item>
-        <item> Futbol</item>
-        <item> Aerobicos</item>
-    </string-array>
-
-    <string-array name="FiltroMapa">
-        <item> Actividades a 5km</item>
-        <item> Actividades a 10km</item>
-        <item> Actividades a 15km</item>
-    </string-array>
-    <string-array name="Busqueda">
-        <item> Fabian Rojas</item>
-    </string-array>
-    <string-array name="Amigos">
-        <item> Fabian Rojas</item>
-    </string-array>
-    <string-array name="Mensajes">
-        <item> Buena mi hermano, ¿Por que no va a entrenar?</item>
-    </string-array>
-    <string-array name="ListaEventos">
-        <item> Practica Futbol 5 - Bosa Centro - Asistire</item>
-        <item> Caslistenia - Bosa La Despensa - Cancelado</item>
-    </string-array>
-
+    <!--Hints formularios-->
+    <string name="correo">Correo electronico</string>
+    <string name="pass">Contraseña</string>
+    <string name="vpass">Repita su contraseña</string>
+    <string name="usuario">Nombre de usuario</string>
+    <string name="desc">Descripcion</string>
+    <string name="desc_help">Describe brevemente quien eres, lo que te gusta hacer.</string>
+    <string name="terminos">Acepto terminos y condiciones.</string>
+    <string name="cuenta_existe">¿Ya tienes cuenta? Inicia Sesion</string>
 
 </resources>

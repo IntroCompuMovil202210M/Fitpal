@@ -3,29 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/drawable/bordes.xml" value="0.2985" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout-v31/activity_pantalla_login.xml" value="0.23772609819121446" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_login.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_login1.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_perfil.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_principal.xml" value="0.33" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro1.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro2.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro3.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Usuario/Desktop/CompuMovil/FitPal/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro4.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/aulasingenieria/Downloads/Nueva carpeta/Fitpal/FitPal/app/src/main/res/layout/activity_amigos.xml" value="0.2359375" />
-        <entry key="..\:/Users/aulasingenieria/Downloads/Nueva carpeta/Fitpal/FitPal/app/src/main/res/layout/activity_buscar_perfil.xml" value="0.2359375" />
-        <entry key="..\:/Users/aulasingenieria/Downloads/Nueva carpeta/Fitpal/FitPal/app/src/main/res/layout/activity_chat.xml" value="0.2359375" />
-        <entry key="..\:/Users/aulasingenieria/Downloads/Nueva carpeta/Fitpal/FitPal/app/src/main/res/layout/activity_lista_eventos.xml" value="0.2359375" />
-        <entry key="..\:/Users/aulasingenieria/Downloads/Nueva carpeta/Fitpal/FitPal/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
-        <entry key="..\:/Users/aulasingenieria/Downloads/Nueva carpeta/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_login1.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/aulasingenieria/Downloads/Nueva carpeta/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_perfil.xml" value="0.2359375" />
-        <entry key="..\:/Users/aulasingenieria/Downloads/Nueva carpeta/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_principal.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/aulasingenieria/Downloads/Nueva carpeta/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro1.xml" value="0.2359375" />
-        <entry key="..\:/Users/aulasingenieria/Downloads/Nueva carpeta/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro2.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/aulasingenieria/Downloads/Nueva carpeta/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro3.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/aulasingenieria/Downloads/Nueva carpeta/Fitpal/FitPal/app/src/main/res/layout/activity_pantalla_registro4.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2075" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable-v24/person_add-48px.xml" value="0.2075" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.115" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.123" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_baseline_chat_24.xml" value="0.123" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.123" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.1285" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_baseline_sports_basketball_24.xml" value="0.1285" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_fitpal_letras.xml" value="0.123" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1285" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/splash.xml" value="0.123" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/splash_ic_background.xml" value="0.1285" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/drawable/splashscreen.xml" value="0.115" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/font/league_gothic.xml" value="0.20092592592592592" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/layout-w936dp/activity_login.xml" value="0.15" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/layout/activity_splash.xml" value="0.22" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.22" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/menu/navigation.xml" value="0.18" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.115" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.115" />
+        <entry key="..\:/Users/Skari/AndroidStudioProjects/FitPal/app/src/main/res/mipmap-anydpi-v26/splash_ic.xml" value="0.1285" />
       </map>
     </option>
   </component>
