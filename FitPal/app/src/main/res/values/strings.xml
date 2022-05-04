@@ -11,6 +11,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="registro">REGISTRO</string>
+    <string name="login">INICIAR SESION</string>
 
     <!--Hints formularios-->
     <string name="correo">Correo electronico</string>
@@ -21,7 +22,14 @@
     <string name="desc_help">Describe brevemente quien eres, lo que te gusta hacer.</string>
     <string name="terminos">Acepto terminos y condiciones.</string>
     <string name="cuenta_existe">¿Ya tienes cuenta? Inicia Sesion</string>
+    <string name="nueva_cuenta">¿No tienes cuenta? Registrate</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="name">Nombre/s</string>
+    <string name="last_name">Apellido/s</string>
+    <string name="bio">Biografia</string>
+    <string name="completar_registro">CREAR PERFIL</string>
+    <string name="profile_pic">Foto de perfil</string>
 
 </resources>
