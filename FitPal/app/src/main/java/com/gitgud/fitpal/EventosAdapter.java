@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.gitgud.fitpal.data.Evento;
+import com.gitgud.fitpal.entidades.Evento;
 
 import java.util.List;
 
@@ -20,9 +20,16 @@ public class EventosAdapter extends ArrayAdapter<Evento> {
     private Context mContext;
     private int resourceLayout;
 
-    public EventosAdapter(@NonNull Context context, int resource, List<Evento> objects) {
+   /* public EventosAdapter(@NonNull Context context, int resource, List<Evento> objects) {
         super(context, resource, objects);
         this.mList = objects;
+        this.mContext = context;
+        this.resourceLayout = resource;
+    }*/
+
+    public EventosAdapter(@NonNull Context context, int resource, List<Evento> mList) {
+        super(context, resource, mList);
+        this.mList = mList;
         this.mContext = context;
         this.resourceLayout = resource;
     }

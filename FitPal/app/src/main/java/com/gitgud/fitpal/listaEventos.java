@@ -12,6 +12,7 @@ import android.widget.ListView;
 import com.gitgud.fitpal.entidades.Evento;
 import com.gitgud.fitpal.entidades.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,6 +24,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.Source;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class listaEventos extends AppCompatActivity {
 
@@ -30,6 +32,7 @@ public class listaEventos extends AppCompatActivity {
     private FirebaseUser user;
     private FirebaseFirestore db;
     EventosAdapter mEventosAdapter;
+    List<Evento> mEventos = new ArrayList<>();
     ListView listaEventos;
 
     @Override
@@ -41,22 +44,21 @@ public class listaEventos extends AppCompatActivity {
         user = mAuth.getCurrentUser();
 
         db = FirebaseFirestore.getInstance();
-
-        obtenerEventosBase();
+        inflarObjetos();
 
     }
 
     private void inflarObjetos(){
 
         listaEventos = (ListView) findViewById(R.id.listaEventos);
-        //mCursor = getContentResolver()
-        //mEventosAdapter = new EventosAdapter(this, null, 0);
+        obtenerEventosBase();
+        mEventosAdapter = new EventosAdapter(this, R.layout.item_eventos, mEventos);
         listaEventos.setAdapter(mEventosAdapter);
     }
 
     private void obtenerEventosBase(){
         String correo = user.getEmail();
-        ArrayList<String> eventos = new ArrayList<>();
+        ArrayList<String> eventosStrings = new ArrayList<>();
         ArrayList<Usuario> usuarios = null;
         db.collection("usuarios")
                 .whereEqualTo("correo", correo)
@@ -73,24 +75,16 @@ public class listaEventos extends AppCompatActivity {
                         }
                     }
                 });
-        eventos = usuarios.get(0).getEventos();
+        eventosStrings = usuarios.get(0).getEventos();
+        ArrayList<Evento> eventos;
+        for(String eventoString: eventosStrings){
+            DocumentReference docRef = db.collection("eventos").document(eventoString);
 
-        for(String evento: eventos){
-            DocumentReference docRef = db.collection("eventos").document(evento);
-
-            Source source = Source.CACHE;
-
-// Get the document, forcing the SDK to use the offline cache
-            docRef.get(source).addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    if (task.isSuccessful()) {
-                        // Document found in the offline cache
-                        DocumentSnapshot document = task.getResult();
-                        Log.d(TAG, "Cached document data: " + document.getData());
-                    } else {
-                        Log.d(TAG, "Cached get failed: ", task.getException());
-                    }
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    Evento evento = documentSnapshot.toObject(Evento.class);
+                    mEventos.add(evento);
                 }
             });
         }
