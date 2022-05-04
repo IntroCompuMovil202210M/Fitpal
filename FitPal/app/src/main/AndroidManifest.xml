@@ -23,6 +23,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitPal">
         <activity
+            android:name=".ConsultarEvento"
+            android:exported="false" />
+        <activity
             android:name=".UploadImageActivity"
             android:exported="false" />
         <activity
