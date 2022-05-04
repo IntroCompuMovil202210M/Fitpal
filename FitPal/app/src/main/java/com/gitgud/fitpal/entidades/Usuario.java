@@ -3,23 +3,29 @@ package com.gitgud.fitpal.entidades;
 import java.util.ArrayList;
 
 public class Usuario {
-    private String arroba;
-    private String correo;
+    private String username;
     private String bio;
     private ArrayList<String> deportes;
     private String nombre;
     private String apellido;
     private String telefono;
     private ArrayList<String> eventos;
+    private boolean perfilCompleto;
 
-    public String getArroba() {
-        return arroba;
+    public Usuario(){
+        this.username= "";
+        this.bio = "";
+        this.deportes = new ArrayList<>();
+        this.nombre = "";
+        this.apellido = "";
+        this.telefono = "";
+        this.eventos = new ArrayList<>();
+        this.perfilCompleto = false;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getUsername() {
+        return username;
     }
-
     public String getBio() {
         return bio;
     }
@@ -60,12 +66,8 @@ public class Usuario {
         this.eventos = eventos;
     }
 
-    public void setArroba(String arroba) {
-        this.arroba = arroba;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setUsername(String arroba) {
+        this.username = arroba;
     }
 
     public void setBio(String bio) {
@@ -74,5 +76,13 @@ public class Usuario {
 
     public void setDeportes(ArrayList<String> deportes) {
         this.deportes = deportes;
+    }
+
+    public boolean isPerfilCompleto() {
+        return perfilCompleto;
+    }
+
+    public void setPerfilCompleto(boolean perfilCompleto) {
+        this.perfilCompleto = perfilCompleto;
     }
 }
