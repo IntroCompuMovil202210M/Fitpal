@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Evento {
     private String organizador;
-    private String fecha;
+    private String fechahora;
     private float duracion;
     private String deporte;
     private ArrayList<String> Asistentes;
@@ -18,12 +18,12 @@ public class Evento {
         this.organizador = organizador;
     }
 
-    public String getFecha() {
-        return fecha;
+    public String getFechahora() {
+        return fechahora;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setFechahora(String fechahora) {
+        this.fechahora = fechahora;
     }
 
     public float getDuracion() {

@@ -9,8 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
 
-import com.gitgud.fitpal.data.Evento;
-import com.gitgud.fitpal.data.Usuario;
+import com.gitgud.fitpal.entidades.Evento;
+import com.gitgud.fitpal.entidades.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
