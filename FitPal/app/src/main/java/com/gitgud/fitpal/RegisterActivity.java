@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -24,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
     private View.OnClickListener openActivity = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(RegisterActivity.this, HuellaActivity.class);
+            Intent intent = new Intent(RegisterActivity.this, UploadImageActivity.class);
             startActivity(intent);
         }
     };
