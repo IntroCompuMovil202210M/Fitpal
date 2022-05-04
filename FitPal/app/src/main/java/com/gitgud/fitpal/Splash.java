@@ -42,13 +42,12 @@ public class Splash extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        db = FirebaseFirestore.getInstance();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (user == null) {
-                    startActivity(new Intent(Splash.this, RegisterActivity.class));
-                    finish();
-                } else {
+                if(user==null){
                     db.collection("Usuario")
                             .get()
                             .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -56,31 +55,20 @@ public class Splash extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                     if (task.isSuccessful()) {
                                         for (QueryDocumentSnapshot document : task.getResult()) {
-
-                                            if (user.getEmail().equals(document.getData().get("correo"))) {
-
-
-                                                if((boolean) document.getData().get("registroCompleto")){
-
-                                            String idDco = document.getId().toString();
-                                            if (user.getEmail().equals(idDco)){
-                                                if ((boolean) document.getData().get("perfilCompleto")) {
-
-                                                    startActivity(new Intent(Splash.this, MainActivity.class));
-                                                    finish();
-                                                } else {
-                                                    startActivity(new Intent(Splash.this, MainActivity.class));
-                                                    finish();
-                                                }
-                                            }
+                                            Log.d(TAG, document.getId() + " => " + document.getData().get("correo"));
                                         }
                                     } else {
                                         Log.w(TAG, "Error getting documents.", task.getException());
                                     }
                                 }
                             });
+                    startActivity(new Intent(Splash.this, RegisterActivity.class));
+                    finish();
                 }
+                //else if(){
+                //}
+
             }
-        }, 3000);
+        },3000);
     }
 }
