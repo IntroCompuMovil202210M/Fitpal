@@ -9,22 +9,23 @@ import android.widget.Button;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    //Button botonMapa;
+    Button boton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        //botonMapa = findViewById(R.id.button);
-        //botonMapa.setOnClickListener(abrirMapa);
+        boton = findViewById(R.id.button1);
+        boton.setOnClickListener(openActivity);
     }
 
-    /*private View.OnClickListener abrirMapa = new View.OnClickListener() {
+
+    private View.OnClickListener openActivity = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(view.getContext(), Mapa.class);
+            Intent intent = new Intent(RegisterActivity.this, HuellaActivity.class);
             startActivity(intent);
         }
-    };*/
+    };
 }
