@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.util.Log;
+
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gitgud.fitpal.entidades.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -28,6 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     TextView email;
     TextView password;
     TextView password_verify;
+    TextView login;
     private FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,8 @@ public class RegisterActivity extends AppCompatActivity {
         password_verify = (TextView) findViewById(R.id.et_vpass);
         boton = findViewById(R.id.button1);
         boton.setOnClickListener(openActivity);
-
+        login = (TextView) findViewById(R.id.textView);
+        login.setOnClickListener(loginActivity_bt);
         register = findViewById(R.id.bt_register);
         register.setOnClickListener(registrar);
     }
@@ -51,6 +56,14 @@ public class RegisterActivity extends AppCompatActivity {
         public void onClick(View view) {
             Intent intent = new Intent(RegisterActivity.this, UploadImageActivity.class);
             startActivity(intent);
+        }
+    };
+    private View.OnClickListener loginActivity_bt = new android.view.View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
         }
     };
     private View.OnClickListener registrar = new View.OnClickListener() {
@@ -95,6 +108,8 @@ public class RegisterActivity extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                                         if (task.isSuccessful()) {
+                                            Usuario nuevoUsuario = new Usuario();
+                                            db.collection("Usuario").document(correo).set(nuevoUsuario);
                                             Toast.makeText(RegisterActivity.this, "¡Registro Exitoso!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                             startActivity(intent);
