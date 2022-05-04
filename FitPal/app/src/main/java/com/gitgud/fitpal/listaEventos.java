@@ -42,6 +42,8 @@ public class listaEventos extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
+        obtenerEventosBase();
+
     }
 
     private void inflarObjetos(){
