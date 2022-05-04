@@ -35,6 +35,9 @@
             android:name=".CompleteRegister"
             android:exported="false" />
         <activity
+            android:name=".CompleteRegister2"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
