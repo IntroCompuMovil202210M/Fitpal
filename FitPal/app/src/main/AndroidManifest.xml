@@ -22,6 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitPal">
         <activity
+            android:name=".CompleteRegister2"
+            android:exported="false" />
+        <activity
             android:name=".MiPerfil"
             android:exported="false" />
         <activity
@@ -31,7 +34,7 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".completeRegister"
+            android:name=".CompleteRegister"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"

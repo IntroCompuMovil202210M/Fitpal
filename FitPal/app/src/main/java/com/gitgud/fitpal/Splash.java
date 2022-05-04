@@ -22,22 +22,27 @@ public class Splash extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    private FirebaseUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mAuth = FirebaseAuth.getInstance();
         super.onCreate(savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
         setContentView(R.layout.activity_splash);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
-        db = FirebaseFirestore.getInstance();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 if(user==null){
+                    startActivity(new Intent(Splash.this, LoginActivity.class));
+                    finish();
+                }
+                else{
                     db.collection("Usuario")
                             .get()
                             .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -45,18 +50,23 @@ public class Splash extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                     if (task.isSuccessful()) {
                                         for (QueryDocumentSnapshot document : task.getResult()) {
-                                            Log.d(TAG, document.getId() + " => " + document.getData().get("correo"));
+                                            if(user.getEmail().equals(document.getData().get("correo"))){
+                                                if((boolean) document.getData().get("registroCompleto")){
+                                                    startActivity(new Intent(Splash.this, MainActivity.class));
+                                                    finish();
+                                                }
+                                                else{
+                                                    startActivity(new Intent(Splash.this, CompleteRegister.class));
+                                                    finish();
+                                                }
+                                            }
                                         }
                                     } else {
                                         Log.w(TAG, "Error getting documents.", task.getException());
                                     }
                                 }
                             });
-                    startActivity(new Intent(Splash.this, RegisterActivity.class));
-                    finish();
                 }
-                //else if(){
-                //}
 
             }
         },3000);
