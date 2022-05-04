@@ -98,7 +98,6 @@ public class listaEventos extends AppCompatActivity implements AdapterView.OnIte
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                             Evento evento = documentSnapshot.toObject(Evento.class);
-                            evento.setId(idEvento);
                             mEventos.add(evento);
                         }
                     });

@@ -2,6 +2,7 @@ package com.gitgud.fitpal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.graphics.Color;
 import android.view.View;
@@ -65,6 +66,7 @@ public class HuellaActivity extends AppCompatActivity {
             @Override
             public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
                 super.onAuthenticationError(errorCode, errString);
+                Toast.makeText(getApplicationContext(), "Error de autenticacion", Toast.LENGTH_SHORT).show();
             }
 
             // THIS METHOD IS CALLED WHEN AUTHENTICATION IS SUCCESS
@@ -73,11 +75,14 @@ public class HuellaActivity extends AppCompatActivity {
                 super.onAuthenticationSucceeded(result);
                 Toast.makeText(getApplicationContext(), "Sesión iniciada", Toast.LENGTH_SHORT).show();
                 loginbutton.setText("Sesión iniciada");
+                startActivity(new Intent(HuellaActivity.this, Mapa.class));
+                finish();
             }
 
             @Override
             public void onAuthenticationFailed() {
                 super.onAuthenticationFailed();
+                Toast.makeText(getApplicationContext(), "Autenticacion fallida", Toast.LENGTH_SHORT).show();
             }
         });
         // creating a variable for our promptInfo

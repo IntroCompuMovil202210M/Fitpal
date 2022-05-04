@@ -42,8 +42,8 @@ public class RegisterActivity extends AppCompatActivity {
         email = (TextView) findViewById(R.id.et_correo);
         password = (TextView) findViewById(R.id.et_pass);
         password_verify = (TextView) findViewById(R.id.et_vpass);
-        boton = findViewById(R.id.button1);
-        boton.setOnClickListener(openActivity);
+        /*boton = findViewById(R.id.button1);
+        boton.setOnClickListener(openActivity);*/
         login = (TextView) findViewById(R.id.textView);
         login.setOnClickListener(loginActivity_bt);
         register = findViewById(R.id.bt_register);
@@ -51,13 +51,13 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    private View.OnClickListener openActivity = new View.OnClickListener() {
+    /*private View.OnClickListener openActivity = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(RegisterActivity.this, UploadImageActivity.class);
             startActivity(intent);
         }
-    };
+    };*/
     private View.OnClickListener loginActivity_bt = new android.view.View.OnClickListener() {
         @Override
         public void onClick(View view) {
