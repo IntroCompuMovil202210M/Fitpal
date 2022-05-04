@@ -10,13 +10,19 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
+import com.gitgud.fitpal.entidades.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.Source;
+
+import java.util.ArrayList;
 
 public class Splash extends AppCompatActivity {
 
@@ -42,7 +48,7 @@ public class Splash extends AppCompatActivity {
                     startActivity(new Intent(Splash.this, RegisterActivity.class));
                     finish();
                 }
-                else{
+                else {
                     db.collection("Usuario")
                             .get()
                             .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -50,12 +56,32 @@ public class Splash extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                     if (task.isSuccessful()) {
                                         for (QueryDocumentSnapshot document : task.getResult()) {
-                                            if(user.getEmail().equals(document.getData().get("correo"))){
-                                                if((boolean) document.getData().get("registroCompleto")){
+                                            if (user.getEmail().equals(document.getData().get("correo"))) {
+
+                                                if ((boolean) document.getData().get("registroCompleto")) {
+                                                    ArrayList<String> eventos = (ArrayList<String>) document.getData().get("eventos");
+                                                    for (String evento : eventos) {
+                                                        DocumentReference docRef = db.collection("eventos").document(evento);
+
+                                                        Source source = Source.CACHE;
+
+                                                        // Get the document, forcing the SDK to use the offline cache
+                                                        docRef.get(source).addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                                if (task.isSuccessful()) {
+                                                                    // Document found in the offline cache
+                                                                    DocumentSnapshot document = task.getResult();
+                                                                    Log.d(TAG, "Cached document data: " + document.getData());
+                                                                } else {
+                                                                    Log.d(TAG, "Cached get failed: ", task.getException());
+                                                                }
+                                                            }
+                                                        });
+                                                    }
                                                     startActivity(new Intent(Splash.this, MainActivity.class));
                                                     finish();
-                                                }
-                                                else{
+                                                } else {
                                                     startActivity(new Intent(Splash.this, CompleteRegister.class));
                                                     finish();
                                                 }
@@ -66,8 +92,9 @@ public class Splash extends AppCompatActivity {
                                     }
                                 }
                             });
-                }
 
+
+                }
             }
         },3000);
     }

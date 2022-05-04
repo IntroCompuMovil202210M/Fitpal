@@ -1,10 +1,10 @@
-package com.gitgud.fitpal.entidades;
+package com.gitgud.fitpal.data;
 
 import java.util.ArrayList;
 
 public class Evento {
     private String organizador;
-    private String fechahora;
+    private String fecha;
     private float duracion;
     private String deporte;
     private ArrayList<String> Asistentes;
@@ -18,12 +18,12 @@ public class Evento {
         this.organizador = organizador;
     }
 
-    public String getFechahora() {
-        return fechahora;
+    public String getFecha() {
+        return fecha;
     }
 
-    public void setFechahora(String fechahora) {
-        this.fechahora = fechahora;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
     public float getDuracion() {
