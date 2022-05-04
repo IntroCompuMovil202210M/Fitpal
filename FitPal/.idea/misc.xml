@@ -31,9 +31,12 @@
         <entry key="..\:/Users/aulasingenieria/Documents/GitHub/Fitpal/FitPal/app/src/main/res/layout/activity_consultar_evento.xml" value="0.358695652173913" />
         <entry key="..\:/Users/aulasingenieria/Documents/GitHub/Fitpal/FitPal/app/src/main/res/layout/activity_lista_eventos.xml" value="0.2390625" />
         <entry key="..\:/Users/aulasingenieria/Documents/GitHub/Fitpal/FitPal/app/src/main/res/layout/activity_login.xml" value="0.17391304347826086" />
-        <entry key="..\:/Users/aulasingenieria/Documents/GitHub/Fitpal/FitPal/app/src/main/res/layout/activity_main.xml" value="0.11626139817629179" />
+        <entry key="..\:/Users/aulasingenieria/Documents/GitHub/Fitpal/FitPal/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/aulasingenieria/Documents/GitHub/Fitpal/FitPal/app/src/main/res/layout/activity_register.xml" value="0.17391304347826086" />
+        <entry key="..\:/Users/aulasingenieria/Documents/GitHub/Fitpal/FitPal/app/src/main/res/layout/fragment_lista_chats.xml" value="0.358695652173913" />
         <entry key="..\:/Users/aulasingenieria/Documents/GitHub/Fitpal/FitPal/app/src/main/res/layout/item_eventos.xml" value="0.2390625" />
+        <entry key="..\:/Users/aulasingenieria/Documents/GitHub/Fitpal/FitPal/app/src/main/res/menu/menu.xml" value="0.3625" />
+        <entry key="..\:/Users/aulasingenieria/Documents/GitHub/Fitpal/FitPal/app/src/main/res/menu/navigation.xml" value="0.3625" />
       </map>
     </option>
   </component>
