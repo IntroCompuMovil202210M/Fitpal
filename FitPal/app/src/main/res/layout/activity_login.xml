@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".LoginActivity">
+
 
     <TextView
-        android:id="@+id/register_title"
+        android:id="@+id/login_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
         android:fontFamily="@font/league_gothic"
-        android:text="@string/registro"
+        android:text="@string/login"
         android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,7 +29,7 @@
         tools:ignore="MissingConstraints" />-->
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout_login"
         android:layout_width="match_parent"
         android:layout_height="460dp"
         android:background="?attr/colorPrimary"
@@ -44,25 +45,25 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_correo"
+            android:id="@+id/til_correo_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
             android:hint="@string/correo"
             app:endIconMode="clear_text"
             >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_correo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:nextFocusForward="@id/et_pass"
-                    >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_correo_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:nextFocusForward="@id/et_pass"
+                >
 
-                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_pass"
+            android:id="@+id/til_pass_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
@@ -70,56 +71,25 @@
             android:paddingTop="@dimen/common_padding_default"
             app:endIconMode="password_toggle"
             >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_pass"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:nextFocusForward="@id/et_vpass"
-                    >
-
-                </com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_vpass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
-            android:hint="@string/vpass"
-            android:paddingTop="@dimen/common_padding_default"
-            app:endIconMode="password_toggle"
-            >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_vpass"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:imeOptions="actionDone"
-                    >
-                </com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>}
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <CheckBox
-                android:id="@+id/cb_terminos"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_pass_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/common_padding_default"></CheckBox>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/terminos"></TextView>
-        </LinearLayout>
+                android:inputType="textPassword"
+                android:imeOptions="actionDone"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+        }
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/bt_register"
+            android:id="@+id/bt_login"
             android:layout_width="wrap_content"
             android:layout_height="64dp"
             android:paddingTop="@dimen/common_padding_default"
-            android:text="Registrarse"
+            android:text="Iniciar Sesion"
             android:textColor="?attr/colorPrimary"
             app:backgroundTint="?attr/buttonTint"
             app:icon="@drawable/ic_baseline_send_24"
@@ -127,7 +97,7 @@
             app:iconTint="?attr/colorPrimary"></com.google.android.material.button.MaterialButton>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cuenta_existe"
@@ -136,10 +106,10 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView_login"
         android:layout_width="233dp"
         android:layout_height="107dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
