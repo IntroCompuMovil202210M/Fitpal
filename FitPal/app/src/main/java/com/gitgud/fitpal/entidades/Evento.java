@@ -3,6 +3,7 @@ package com.gitgud.fitpal.entidades;
 import java.util.ArrayList;
 
 public class Evento {
+    private String id;
     private String organizador;
     private String fechahora;
     private float duracion;
@@ -12,6 +13,14 @@ public class Evento {
 
     public String getOrganizador() {
         return organizador;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setOrganizador(String organizador) {

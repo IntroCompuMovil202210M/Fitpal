@@ -4,10 +4,14 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.gitgud.fitpal.entidades.Evento;
 import com.gitgud.fitpal.entidades.Usuario;
@@ -26,7 +30,7 @@ import com.google.firebase.firestore.Source;
 import java.util.ArrayList;
 import java.util.List;
 
-public class listaEventos extends AppCompatActivity {
+public class listaEventos extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private FirebaseAuth mAuth;
     private FirebaseUser user;
@@ -40,10 +44,9 @@ public class listaEventos extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_eventos);
+        db = FirebaseFirestore.getInstance();
 
         user = mAuth.getCurrentUser();
-
-        db = FirebaseFirestore.getInstance();
         inflarObjetos();
 
     }
@@ -60,36 +63,33 @@ public class listaEventos extends AppCompatActivity {
         String correo = user.getEmail();
         ArrayList<String> eventosStrings = new ArrayList<>();
         ArrayList<Usuario> usuarios = null;
-        db.collection("usuarios")
-                .whereEqualTo("correo", correo)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                usuarios.add(document.toObject(Usuario.class));
-                            }
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
+        DocumentReference docRef = db.collection("Usuario").document(correo);
+        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Usuario usuario = documentSnapshot.toObject(Usuario.class);
+                ArrayList<String> idEventos =usuario.getEventos();
+                for(String idEvento: idEventos){
+                    DocumentReference RefEvento = db.collection("evento").document(idEvento);
+                    RefEvento.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            Evento evento = documentSnapshot.toObject(Evento.class);
+                            evento.setId(idEvento);
+                            mEventos.add(evento);
                         }
-                    }
-                });
-        eventosStrings = usuarios.get(0).getEventos();
-        ArrayList<Evento> eventos;
-        for(String eventoString: eventosStrings){
-            DocumentReference docRef = db.collection("eventos").document(eventoString);
-
-            docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                @Override
-                public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    Evento evento = documentSnapshot.toObject(Evento.class);
-                    mEventos.add(evento);
+                    });
                 }
-            });
-        }
 
+            }
+        });
+    }
 
-
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Toast.makeText(this,"Evento clicado",Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, ConsultarEvento.class);
+        intent.putExtra("idEvento", mEventosAdapter.getItem(i).getId());
+        startActivity(intent);
     }
 }

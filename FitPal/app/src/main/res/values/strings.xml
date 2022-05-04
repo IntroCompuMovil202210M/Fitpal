@@ -31,5 +31,12 @@
     <string name="bio">Biografia</string>
     <string name="completar_registro">CREAR PERFIL</string>
     <string name="profile_pic">Foto de perfil</string>
+    <string name="evento">Evento</string>
+    <string name="deporte">Deporte</string>
+    <string name="organizador">Organizador</string>
+    <string name="descripci_n_del_evento">Descripción del evento</string>
+    <string name="asistentes">Asistentes</string>
+    <string name="fecha">Fecha</string>
+    <string name="duracion">Duracion</string>
 
 </resources>

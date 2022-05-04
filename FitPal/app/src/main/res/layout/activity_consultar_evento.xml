@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ConsultarEvento">
+
+    <TextView
+        android:id="@+id/textViewEvento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/evento"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textViewDeporte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/deporte" />
+
+    <TextView
+        android:id="@+id/textViewOrganizador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/organizador" />
+
+    <TextView
+        android:id="@+id/textViewFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fecha" />
+
+    <TextView
+        android:id="@+id/textViewDuracion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/duracion" />
+
+    <TextView
+        android:id="@+id/textViewDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/descripci_n_del_evento" />
+
+    <TextView
+        android:id="@+id/textViewAsistentes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/asistentes" />
+
+    <ScrollView
+        android:id="@+id/scrollViewAsistentes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/listViewAsistentes"
+                android:layout_width="match_parent"
+                android:layout_height="431dp"
+                android:layout_weight="0.3" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

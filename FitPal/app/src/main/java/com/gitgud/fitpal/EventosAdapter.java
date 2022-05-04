@@ -11,21 +11,20 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.gitgud.fitpal.entidades.Deporte;
 import com.gitgud.fitpal.entidades.Evento;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
 public class EventosAdapter extends ArrayAdapter<Evento> {
+
     private List<Evento> mList;
     private Context mContext;
     private int resourceLayout;
-
-   /* public EventosAdapter(@NonNull Context context, int resource, List<Evento> objects) {
-        super(context, resource, objects);
-        this.mList = objects;
-        this.mContext = context;
-        this.resourceLayout = resource;
-    }*/
 
     public EventosAdapter(@NonNull Context context, int resource, List<Evento> mList) {
         super(context, resource, mList);
@@ -43,7 +42,6 @@ public class EventosAdapter extends ArrayAdapter<Evento> {
         }
 
         Evento evento = mList.get(posicion);
-
         TextView tvIdUsuario = (TextView) view.findViewById(R.id.idUsuario);
         TextView tvDeporte = (TextView) view.findViewById(R.id.Deporte);
 

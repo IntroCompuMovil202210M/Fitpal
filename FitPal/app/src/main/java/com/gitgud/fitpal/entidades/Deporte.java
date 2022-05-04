@@ -2,8 +2,17 @@ package com.gitgud.fitpal.entidades;
 
 public class Deporte {
     private String IdDeporte;
-    private String Diminutivo;
-    private String Tipo;
+    private String nombre;
+    private String diminutivo;
+    private String tipo;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     String getIdDeporte(){
         return IdDeporte;
@@ -14,19 +23,19 @@ public class Deporte {
     }
 
     public String getDiminutivo() {
-        return Diminutivo;
+        return diminutivo;
     }
 
     public void setDiminutivo(String diminutivo) {
-        Diminutivo = diminutivo;
+        this.diminutivo = diminutivo;
     }
 
     public String getTipo() {
-        return Tipo;
+        return tipo;
     }
 
     public void setTipo(String tipo) {
-        Tipo = tipo;
+        this.tipo = tipo;
     }
 }
 
