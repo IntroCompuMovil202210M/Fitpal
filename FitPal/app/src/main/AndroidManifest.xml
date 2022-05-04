@@ -26,6 +26,9 @@
             android:name=".Mapa"
             android:exported="false" />
         <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".completeRegister"
             android:exported="false" />
         <activity
