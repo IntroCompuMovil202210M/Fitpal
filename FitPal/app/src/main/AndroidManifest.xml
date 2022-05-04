@@ -22,12 +22,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitPal">
-        <activity
-            android:name=".CompleteRegister2"
-            android:exported="false" />
-        <activity
-            android:name=".MiPerfil"
-            android:exported="false" />
+
         <activity
             android:name=".Mapa"
             android:exported="false" />
@@ -35,10 +30,13 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".CompleteRegister"
+            android:name=".completeRegister"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HuellaActivity"
             android:exported="false" />
         <activity
             android:name=".Splash"

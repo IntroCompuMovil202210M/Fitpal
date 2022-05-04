@@ -24,7 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
     private View.OnClickListener openActivity = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(RegisterActivity.this, Mapa.class);
+            Intent intent = new Intent(RegisterActivity.this, HuellaActivity.class);
             startActivity(intent);
         }
     };
