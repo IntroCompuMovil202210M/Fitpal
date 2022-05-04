@@ -3,6 +3,7 @@ package com.gitgud.fitpal;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
@@ -45,6 +46,7 @@ import com.google.android.gms.location.SettingsClient;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -99,12 +101,14 @@ public class Mapa extends AppCompatActivity {
     private double upperRightLatitude;
     private double upperRigthLongitude;
     private RoadManager roadManager;
+    BottomNavigationView menuInferior;
     Polyline roadOverlay;
 
     @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         ultimaUbicacion = new GeoPoint(0.0,0.0);
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         solicitarPermisoAlmacenamiento.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE);
@@ -112,6 +116,27 @@ public class Mapa extends AppCompatActivity {
         Context ctx = getApplicationContext();
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
         setContentView(R.layout.activity_mapa);
+        menuInferior = (BottomNavigationView) findViewById(R.id.menuInferior_map);
+        menuInferior.setSelectedItemId(R.id.inicio_navegacion);
+        menuInferior.setOnItemSelectedListener(item->{
+            switch (item.getItemId()){
+                case R.id.inicio_navegacion:
+                    break;
+                case R.id.amigos_navegacion:
+                    break;
+                case R.id.eventos_deportivos_navegacion:
+                    startActivity(new Intent(Mapa.this, listaEventos.class));
+                    finish();
+                    break;
+                case R.id.chat_navegacion:
+                    break;
+                case R.id.perfil_navegacion:
+                    startActivity(new Intent(Mapa.this, MiPerfil.class));
+                    finish();
+                    break;
+            }
+            return true;
+        });
         busqueda = findViewById(R.id.busqueda);
         busqueda.setOnEditorActionListener(buscar);
         settingsOK = false;
@@ -140,7 +165,6 @@ public class Mapa extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
     }
-
     @Override
     protected void onResume() {
         super.onResume();

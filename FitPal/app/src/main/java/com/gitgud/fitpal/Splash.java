@@ -59,10 +59,10 @@ public class Splash extends AppCompatActivity {
                                             String idDco = document.getId().toString();
                                             if (user.getEmail().equals(idDco)){
                                                 if ((boolean) document.getData().get("perfilCompleto")) {
-                                                    startActivity(new Intent(Splash.this, MainActivity.class));
+                                                    startActivity(new Intent(Splash.this, Mapa.class));
                                                     finish();
                                                 } else {
-                                                    startActivity(new Intent(Splash.this, MainActivity.class));
+                                                    startActivity(new Intent(Splash.this, Mapa.class));
                                                     finish();
                                                 }
                                             }

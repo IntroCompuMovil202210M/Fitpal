@@ -42,7 +42,7 @@ public class ConsultarEvento extends AppCompatActivity {
         tvDeporte.setText(deporte);
         tvOrganizador.setText(evento.getOrganizador());
         tvDescripcion.setText(evento.getDescrpicion());
-        tvFecha.setText(evento.getFechahora());
+        tvFecha.setText(evento.getFechahora().toString());
         int minutos = (int)(evento.getDuracion()*60);
         String duracion = (String.valueOf(minutos)+" minutos");
         tvDuracion.setText(duracion);
