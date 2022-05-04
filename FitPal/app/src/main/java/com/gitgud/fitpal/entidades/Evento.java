@@ -1,11 +1,13 @@
 package com.gitgud.fitpal.entidades;
 
+import com.google.firebase.Timestamp;
+
 import java.util.ArrayList;
 
 public class Evento {
     private String id;
     private String organizador;
-    private String fechahora;
+    private Timestamp fechahora;
     private float duracion;
     private String deporte;
     private ArrayList<String> Asistentes;
@@ -25,14 +27,6 @@ public class Evento {
 
     public void setOrganizador(String organizador) {
         this.organizador = organizador;
-    }
-
-    public String getFechahora() {
-        return fechahora;
-    }
-
-    public void setFechahora(String fechahora) {
-        this.fechahora = fechahora;
     }
 
     public float getDuracion() {
@@ -65,5 +59,13 @@ public class Evento {
 
     public void setDescrpicion(String descrpicion) {
         this.descrpicion = descrpicion;
+    }
+
+    public Timestamp getFechahora() {
+        return fechahora;
+    }
+
+    public void setFechahora(Timestamp fechahora) {
+        this.fechahora = fechahora;
     }
 }

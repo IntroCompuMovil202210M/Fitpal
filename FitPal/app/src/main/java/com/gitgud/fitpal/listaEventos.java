@@ -18,6 +18,7 @@ import com.gitgud.fitpal.entidades.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -36,8 +37,9 @@ public class listaEventos extends AppCompatActivity implements AdapterView.OnIte
     private FirebaseUser user;
     private FirebaseFirestore db;
     EventosAdapter mEventosAdapter;
-    List<Evento> mEventos = new ArrayList<>();
+    ArrayList<Evento> mEventos = new ArrayList<>();
     ListView listaEventos;
+    BottomNavigationView menuInferior;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,28 @@ public class listaEventos extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_eventos);
         db = FirebaseFirestore.getInstance();
+        menuInferior = (BottomNavigationView) findViewById(R.id.menuInferior_map);
+        menuInferior.setSelectedItemId(R.id.eventos_deportivos_navegacion);
+        menuInferior.setOnItemSelectedListener(item->{
+            switch (item.getItemId()){
+                case R.id.inicio_navegacion:
+                    startActivity(new Intent(listaEventos.this, Mapa.class));
+                    finish();
+                    break;
+                case R.id.amigos_navegacion:
+                    break;
+                case R.id.eventos_deportivos_navegacion:
 
+                    break;
+                case R.id.chat_navegacion:
+                    break;
+                case R.id.perfil_navegacion:
+                    startActivity(new Intent(listaEventos.this, MiPerfil.class));
+                    finish();
+                    break;
+            }
+            return true;
+        });
         user = mAuth.getCurrentUser();
         inflarObjetos();
 
