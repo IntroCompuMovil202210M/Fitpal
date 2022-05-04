@@ -30,7 +30,7 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".completeRegister"
+            android:name=".CompleteRegister"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
