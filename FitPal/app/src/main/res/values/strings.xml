@@ -12,6 +12,8 @@
     <string name="login_failed">"Login failed"</string>
     <string name="registro">REGISTRO</string>
     <string name="login">INICIAR SESION</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <!--Hints formularios-->
     <string name="correo">Correo electronico</string>

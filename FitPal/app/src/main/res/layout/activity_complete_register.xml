@@ -107,17 +107,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/bio"
             android:paddingTop="@dimen/common_padding_default"
-            app:endIconMode="none">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_biografia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:imeOptions="actionDone">
-
-            </com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>
+            app:endIconMode="none"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_register_a"

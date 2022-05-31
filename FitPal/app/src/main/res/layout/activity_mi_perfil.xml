@@ -92,31 +92,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/chipGr" />
 
-                <TextView
-                    android:id="@+id/logro"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?attr/colorPrimary"
-                    android:fontFamily="@font/league_gothic"
-                    android:text="Logros"
-                    android:textColor="#000000"
-                    android:textSize="30sp"
-                    app:layout_constraintBottom_toTopOf="@+id/histo"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/amig" />
-
-                <TextView
-                    android:id="@+id/histo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/league_gothic"
-                    android:text="Historial"
-                    android:textSize="30sp"
-                    app:layout_constraintBottom_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/logro" />
             </LinearLayout>
         </ScrollView>
 

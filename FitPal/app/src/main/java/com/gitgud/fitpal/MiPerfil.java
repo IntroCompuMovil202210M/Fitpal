@@ -55,7 +55,7 @@ public class MiPerfil extends AppCompatActivity {
                                 String idDco = document.getId().toString();
                                 if (user.getEmail().equals(idDco)){
                                     userName.setText(document.getData().get("username").toString());
-                                    desc.setText(document.getData().get("bio").toString());
+                                    //desc.setText(document.getData().get("bio").toString());
                                 }
                             }
                         } else {
@@ -78,6 +78,8 @@ public class MiPerfil extends AppCompatActivity {
                     finish();
                     break;
                 case R.id.chat_navegacion:
+                    startActivity(new Intent(MiPerfil.this, UserChats.class));
+                    finish();
                     break;
                 case R.id.perfil_navegacion:
                     break;

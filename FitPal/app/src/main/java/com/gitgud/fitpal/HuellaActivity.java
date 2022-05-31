@@ -15,6 +15,7 @@ import androidx.biometric.BiometricManager;
 import androidx.biometric.BiometricPrompt;
 import androidx.core.content.ContextCompat;
 
+import java.util.Timer;
 import java.util.concurrent.Executor;
 
 public class HuellaActivity extends AppCompatActivity {
@@ -24,10 +25,12 @@ public class HuellaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_huella);
 
-
         // Initialising msgtext and loginbutton
         TextView msgtex = findViewById(R.id.msgtext);
         final Button loginbutton = findViewById(R.id.login);
+        final Button continuar = findViewById(R.id.continuar);
+        Timer timer;
+
 
         // creating a variable for our BiometricManager
         // and lets check if our user can use biometric sensor or not
@@ -44,18 +47,22 @@ public class HuellaActivity extends AppCompatActivity {
             case BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE:
                 msgtex.setText("Este dispositivo no posee sensor de huella");
                 loginbutton.setVisibility(View.GONE);
+                startActivity(new Intent(HuellaActivity.this, LoginActivity.class));
+
                 break;
 
             // this means that biometric sensor is not available
             case BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE:
                 msgtex.setText("El sensor de huella está deshabilitado");
                 loginbutton.setVisibility(View.GONE);
+
                 break;
 
             // this means that the device doesn't contain your fingerprint
             case BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED:
                 msgtex.setText("Tu dispositivo no tiene una huella guardada,por favor dirígete a los ajustes de seguridad");
                 loginbutton.setVisibility(View.GONE);
+                startActivity(new Intent(HuellaActivity.this, LoginActivity.class));
                 break;
         }
 

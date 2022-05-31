@@ -27,7 +27,6 @@ public class CompleteRegister extends AppCompatActivity {
         user = (TextView) findViewById(R.id.et_username);
         name = (TextView) findViewById(R.id.et_nombre);
         lname = (TextView) findViewById(R.id.et_apellido);
-        biog = (TextView) findViewById(R.id.et_biografia);
         compRegA.setOnClickListener(registrarDatosA);
     }
     private View.OnClickListener registrarDatosA = new android.view.View.OnClickListener() {
@@ -35,7 +34,6 @@ public class CompleteRegister extends AppCompatActivity {
         public void onClick(View view) {
             username = user.getText().toString();
             nombre  = name.getText().toString();
-            bio  = biog.getText().toString();
             apellido  = lname.getText().toString();
             infoA.putString("username",username);
             infoA.putString("nombre",nombre);

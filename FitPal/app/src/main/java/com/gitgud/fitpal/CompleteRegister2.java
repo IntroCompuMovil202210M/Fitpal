@@ -81,6 +81,7 @@ public class CompleteRegister2 extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             startActivity(new Intent(view.getContext(), UploadImageActivity.class));
+
         }
     };
     private View.OnClickListener cargarDatos = new android.view.View.OnClickListener() {

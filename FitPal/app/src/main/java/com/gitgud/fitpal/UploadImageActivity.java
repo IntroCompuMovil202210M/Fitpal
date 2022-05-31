@@ -59,6 +59,7 @@ public class UploadImageActivity extends AppCompatActivity {
                         //Carga una imagen en la vista...
                         imagen.setImageURI(result);
 
+
                     }
                 }
         );
