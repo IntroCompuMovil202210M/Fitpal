@@ -4,11 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -20,6 +22,7 @@ import com.gitgud.fitpal.entidades.Usuario;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -35,7 +38,7 @@ import com.google.firebase.storage.StorageReference;
 import java.io.File;
 import java.io.IOException;
 
-public class UserChats extends AppCompatActivity {
+public class UserChats extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     ImageView imagen;
     private FirebaseAuth mAuth;
@@ -107,60 +110,46 @@ public class UserChats extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 listaUsuarios.removeAllViews();
 
+
                 for(DataSnapshot singleSnapshot: dataSnapshot.getChildren()){
+
 
                     Usuario usuario = singleSnapshot.getValue(Usuario.class);
                     String nombre = usuario.getNombre() + " " + usuario.getApellido();
-                    try{
+                    user = FirebaseAuth.getInstance().getCurrentUser();
+                    assert user != null;
+                    String userid = user.getUid();
 
-                        File file = File.createTempFile("usuarios","jpg");
-                        StorageReference img =mStorageRef.child("usuarios/" + singleSnapshot.getKey() + "/viga.jpg");
-                        img.getFile(file).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                            @Override
-                            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                                Uri imagen =Uri.fromFile(file);
-                                ImageView foto =new ImageView(UserChats.this);
-                                foto.setImageURI(imagen);
-                                foto.setMinimumHeight(450);
-                                foto.setMaxHeight(450);
-                                TextView nombreTextView = new TextView(UserChats.this);
-                                nombreTextView.setText(nombre);
-                                nombreTextView.setTextSize(20);
-                                Button button = new Button(UserChats.this);
-                                button.setTag(usuario);
-                                button.setText("Ubicacion");
-                                button.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        Intent intent = new Intent(getBaseContext(), MiPerfil.class);
-                                        startActivity(intent);
-                                        //Bundle bundle = new Bundle();
-                                        //bundle.putDouble("latitud", usuario.getLatitude());
-                                        //bundle.putDouble("longitud", usuario.getLongitude());
-                                        //intent.putExtra("pUsuario", bundle);
-                                    }
-                                });
+                    ImageView foto =new ImageView(UserChats.this);
+                    foto.setImageResource(R.drawable.viga);
+                    foto.setMinimumHeight(100);
+                    foto.setMaxHeight(100);
+                    TextView nombreTextView = new TextView(UserChats.this);
+                    nombreTextView.setText(nombre);
+                    nombreTextView.setTextSize(20);
+                    Button button = new Button(UserChats.this);
+                    button.setTag(usuario);
+                    button.setText("Chat");
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getBaseContext(), MessageActivity.class);
+                            intent.putExtra("userid",usuario.getUserId());
+                            intent.putExtra("name", usuario.getNombre());
+                            startActivity(intent);
 
-                                nombreTextView.setText(nombre);
-                                nombreTextView.setTextSize(20);
-                                listaUsuarios.addView(foto);
-                                listaUsuarios.addView(nombreTextView);
-                                listaUsuarios.addView(button);
+                            //Bundle bundle = new Bundle();
+                            //bundle.putDouble("latitud", usuario.getLatitude());
+                            //bundle.putDouble("longitud", usuario.getLongitude());
+                            //intent.putExtra("pUsuario", bundle);
+                        }
+                    });
+                    listaUsuarios.addView(foto);
+                    listaUsuarios.addView(nombreTextView);
+                    listaUsuarios.addView(button);
 
-                            }
-                        })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-
-                                    }
-                                });
-                    }catch(IOException e){
-                        e.printStackTrace();
-                    }
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -170,9 +159,36 @@ public class UserChats extends AppCompatActivity {
     }
 
     @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        Intent intent;
+        switch (menuItem.getItemId()) {
+            case R.id.establecerDisponible:
+                intent = new Intent(this, MiPerfil.class);
+                startActivity(intent);
+                break;
+            case R.id.mapaPrincipal:
+                intent = new Intent(this, Mapa.class);
+                startActivity(intent);
+                break;
+            case R.id.salir:
+                mAuth.signOut();
+                intent = new Intent(this, LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                break;
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+
+        return true;
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         myRef.removeEventListener(listener);
     }
+
+
 
 }

@@ -13,6 +13,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.core.content.FileProvider;
 
 import android.net.Uri;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -36,7 +37,9 @@ public class UploadImageActivity extends AppCompatActivity {
     Uri uricamara;
     FirebaseStorage storage = FirebaseStorage.getInstance();
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    StorageReference mStorageRef;
     FirebaseUser currentUser = mAuth.getCurrentUser();
+    public static final String PATH_USERS = "usuarios/";
     @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,9 @@ public class UploadImageActivity extends AppCompatActivity {
         imagen = findViewById(R.id.imagen);
         imagen.setImageResource(R.drawable.viga);
 
+        mStorageRef = storage.getReference();
+        FirebaseUser user = mAuth.getCurrentUser();
+
         File archivo = new File(getFilesDir(),"fotodesdeCamara");
         uricamara = FileProvider.getUriForFile(this,getApplicationContext().getPackageName()+".fileprovider",archivo);
 
@@ -58,7 +64,6 @@ public class UploadImageActivity extends AppCompatActivity {
                     public void onActivityResult(Uri result) {
                         //Carga una imagen en la vista...
                         imagen.setImageURI(result);
-
 
                     }
                 }
@@ -96,8 +101,23 @@ public class UploadImageActivity extends AppCompatActivity {
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
                 byte[] data = baos.toByteArray();
-                StorageReference mountainsRef = storageRef.child(currentUser.getEmail());
+                StorageReference imR = mStorageRef.child("usuarios/"+user.getUid()+"/fotoperfil.jpg");
 
+                imR.putBytes(data).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        Log.e("Success", "Success");
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e("Failure", "Failure");
+
+                    }
+                });
+                finish();
+
+                /*StorageReference mountainsRef = storageRef.child(currentUser.getEmail());
                 UploadTask uploadTask = mountainsRef.putBytes(data);
                 uploadTask.addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -110,8 +130,8 @@ public class UploadImageActivity extends AppCompatActivity {
                         // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
                         // ...
                     }
-                });
-                finish();
+                });*/
+                //finish();
             }
         });
 

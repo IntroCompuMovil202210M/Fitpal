@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +22,8 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -36,16 +39,28 @@ public class CompleteRegister2 extends AppCompatActivity {
     String nombre;
     String apellido;
     String bio;
+    String userid;
     Bundle parametros;
     ImageButton imagen;
-    FirebaseStorage storage = FirebaseStorage.getInstance();
+    DatabaseReference myRef;
+    FirebaseDatabase database;
+    FirebaseStorage storage;
+    StorageReference mStorageRef;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser currentUser = mAuth.getCurrentUser();
     Button subirDatos;
+    public static final String PATH_USERS = "usuarios/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mAuth = FirebaseAuth.getInstance();
+        storage = FirebaseStorage.getInstance();
+        mStorageRef = storage.getReference();
+        database = FirebaseDatabase.getInstance();
+        mStorageRef = storage.getReference();
         db = FirebaseFirestore.getInstance();
+
         setContentView(R.layout.activity_complete_register2);
         parametros = this.getIntent().getExtras();
         username = parametros.getString("username");
@@ -81,6 +96,9 @@ public class CompleteRegister2 extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             startActivity(new Intent(view.getContext(), UploadImageActivity.class));
+            Uri uri = getIntent().getData();
+
+
 
         }
     };
@@ -88,15 +106,21 @@ public class CompleteRegister2 extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             Usuario nuevoUsuario = new Usuario();
+            assert currentUser != null;
+            userid = currentUser.getUid();
+
+            nuevoUsuario.setUserId(userid);
             nuevoUsuario.setApellido(apellido);
             nuevoUsuario.setNombre(nombre);
             nuevoUsuario.setBio(bio);
             nuevoUsuario.setUsername(username);
-            db.collection("Usuario").document(currentUser.getEmail()).update("apellido",nuevoUsuario.getApellido());
-            db.collection("Usuario").document(currentUser.getEmail()).update("username",nuevoUsuario.getUsername());
-            db.collection("Usuario").document(currentUser.getEmail()).update("nombre",nuevoUsuario.getNombre());
-            db.collection("Usuario").document(currentUser.getEmail()).update("bio",nuevoUsuario.getBio());
-            db.collection("Usuario").document(currentUser.getEmail()).update("perfilCompleto",true);
+            myRef= database.getReference(PATH_USERS+currentUser.getUid());
+            myRef.setValue(nuevoUsuario);
+            //db.collection("Usuario").document(currentUser.getEmail()).update("apellido",nuevoUsuario.getApellido());
+            //db.collection("Usuario").document(currentUser.getEmail()).update("username",nuevoUsuario.getUsername());
+            //db.collection("Usuario").document(currentUser.getEmail()).update("nombre",nuevoUsuario.getNombre());
+            //db.collection("Usuario").document(currentUser.getEmail()).update("bio",nuevoUsuario.getBio());
+            //db.collection("Usuario").document(currentUser.getEmail()).update("perfilCompleto",true);
             startActivity(new Intent(view.getContext(), Mapa.class));
             finish();
         }

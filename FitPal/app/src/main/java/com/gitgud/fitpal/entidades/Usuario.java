@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class Usuario {
     private String username;
+    private String userid;
+    private String email;
+    private String password;
     private String bio;
     private ArrayList<String> deportes;
     private String nombre;
@@ -14,6 +17,9 @@ public class Usuario {
 
     public Usuario(){
         this.username= "";
+        this.userid= "";
+        this.email="";
+        this.password= "";
         this.bio = "";
         this.deportes = new ArrayList<>();
         this.nombre = "";
@@ -84,5 +90,29 @@ public class Usuario {
 
     public void setPerfilCompleto(boolean perfilCompleto) {
         this.perfilCompleto = perfilCompleto;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email= email;
+    }
+
+    public String getUserId() {
+        return this.userid;
+    }
+
+    public void setUserId(String userid) {
+        this.userid= userid;
     }
 }
