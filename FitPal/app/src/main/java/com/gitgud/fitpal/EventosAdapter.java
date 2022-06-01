@@ -7,9 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CursorAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.gitgud.fitpal.entidades.Deporte;
 import com.gitgud.fitpal.entidades.Evento;
@@ -20,35 +22,61 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
-public class EventosAdapter extends ArrayAdapter<Evento> {
+public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHolder> {
 
-    private List<Evento> mList;
-    private Context mContext;
-    private int resourceLayout;
+    private List<Evento> mData;
+    private LayoutInflater mInflater;
+    private Context context;
+    private ItemClickListener mitemClickListener;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    public EventosAdapter(@NonNull Context context, int resource, List<Evento> mList) {
-        super(context, resource, mList);
-        this.mList = mList;
-        this.mContext = context;
-        this.resourceLayout = resource;
+    public EventosAdapter(List<Evento> items, Context context, ItemClickListener itemClickListener){
+        this.mInflater = LayoutInflater.from(context);
+        this.context = context;
+        this.mData = items;
+        this.mitemClickListener = itemClickListener;
     }
 
+    @Override
+    public int getItemCount() {return mData.size();}
 
-    public View getView(int posicion, View convertView, ViewGroup viewGroup){
-        View view = convertView;
+    public interface ItemClickListener{
+        void onItemClick(Evento evento);
+    }
 
-        if(view == null){
-            view = LayoutInflater.from(mContext).inflate(R.layout.item_eventos, viewGroup, false);
+    @Override
+    public EventosAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+        View view = mInflater.inflate(R.layout.item_eventos, null);
+        return new EventosAdapter.ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(final EventosAdapter.ViewHolder holder, final int position){
+        holder.bindData(mData.get(position));
+
+        holder.itemView.setOnClickListener(view -> {
+            mitemClickListener.onItemClick(mData.get(position));
+        });
+    }
+
+    public void setItems(List<Evento> items){mData=items;}
+
+    public class ViewHolder extends RecyclerView.ViewHolder{
+        ImageView icono;
+        TextView deporteTextView, organizadorTextView;
+
+        ViewHolder(View itemView){
+            super(itemView);
+            icono = itemView.findViewById(R.id.itemimage);
+            deporteTextView = itemView.findViewById(R.id.itemTVDeporte);
+            organizadorTextView = itemView.findViewById(R.id.itemTVOrganizador);
         }
 
-        Evento evento = mList.get(posicion);
-        TextView tvIdUsuario = (TextView) view.findViewById(R.id.idUsuario);
-        TextView tvDeporte = (TextView) view.findViewById(R.id.Deporte);
+        void bindData(final Evento item){
 
-        tvIdUsuario.setText(evento.getOrganizador());
-        tvDeporte.setText(evento.getDeporte());
-
-        return view;
+            deporteTextView.setText(item.getDeporte());
+            organizadorTextView.setText(item.getOrganizador());
+        }
     }
 
 }

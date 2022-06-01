@@ -12,6 +12,7 @@ public class Evento {
     private String deporte;
     private ArrayList<String> Asistentes;
     private String descrpicion;
+    private String tipo;
 
     public String getOrganizador() {
         return organizador;
@@ -68,4 +69,7 @@ public class Evento {
     public void setFechahora(Timestamp fechahora) {
         this.fechahora = fechahora;
     }
+
+    public String getTipo() {return tipo;}
+    public void setTipo(String tipo){this.tipo = tipo;}
 }

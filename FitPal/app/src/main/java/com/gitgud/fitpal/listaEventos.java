@@ -3,6 +3,8 @@ package com.gitgud.fitpal;
 import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -19,6 +21,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -31,14 +34,14 @@ import com.google.firebase.firestore.Source;
 import java.util.ArrayList;
 import java.util.List;
 
-public class listaEventos extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class listaEventos extends AppCompatActivity /*implements AdapterView.OnItemClickListener */{
 
     private FirebaseAuth mAuth;
     private FirebaseUser user;
     private FirebaseFirestore db;
-    EventosAdapter mEventosAdapter;
-    ArrayList<Evento> mEventos = new ArrayList<>();
-    ListView listaEventos;
+    //EventosAdapter mEventosAdapter;
+    ArrayList<Evento> eventos = new ArrayList<>();
+    //ListView listaEventos;
     BottomNavigationView menuInferior;
 
     @Override
@@ -70,22 +73,25 @@ public class listaEventos extends AppCompatActivity implements AdapterView.OnIte
             return true;
         });
         user = mAuth.getCurrentUser();
-        inflarObjetos();
+        //obtenerEventosBase();
 
     }
 
     private void inflarObjetos(){
 
-        listaEventos = (ListView) findViewById(R.id.listaEventos);
-        obtenerEventosBase();
-        mEventosAdapter = new EventosAdapter(this, R.layout.item_eventos, mEventos);
-        listaEventos.setAdapter(mEventosAdapter);
+        //listaEventos = (ListView) findViewById(R.id.listaEventos);
+        //obtenerEventosBase();
+        //mEventosAdapter = new EventosAdapter(this, R.layout.item_eventos, mEventos);
+        //listaEventos.setAdapter(mEventosAdapter);
+    }
+
+    private void showToast(String mensaje){
+        Toast.makeText(this,"Evento clicado: "+mensaje,Toast.LENGTH_LONG).show();
     }
 
     private void obtenerEventosBase(){
         String correo = user.getEmail();
-        ArrayList<String> eventosStrings = new ArrayList<>();
-        ArrayList<Usuario> usuarios = null;
+
         DocumentReference docRef = db.collection("Usuario").document(correo);
         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
@@ -94,11 +100,41 @@ public class listaEventos extends AppCompatActivity implements AdapterView.OnIte
                 ArrayList<String> idEventos =usuario.getEventos();
                 for(String idEvento: idEventos){
                     DocumentReference RefEvento = db.collection("evento").document(idEvento);
-                    RefEvento.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    RefEvento.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                         @Override
-                        public void onSuccess(DocumentSnapshot documentSnapshot) {
-                            Evento evento = documentSnapshot.toObject(Evento.class);
-                            mEventos.add(evento);
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot document = task.getResult();
+                                if (document.exists()) {
+                                    Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+
+
+                                    Evento nuevoEvento = new Evento();
+                                    nuevoEvento.setDeporte(document.getString("deporte"));
+                                    nuevoEvento.setOrganizador(document.getString("organizador"));
+                                    Timestamp fecha = document.getTimestamp("fecha");
+                                    nuevoEvento.setId(document.getId());
+                                    int flag = 1;
+
+                                    eventos.add(nuevoEvento);
+
+                                    EventosAdapter eventoAdapter = new EventosAdapter(eventos, getApplicationContext(), new EventosAdapter.ItemClickListener() {
+                                        @Override
+                                        public void onItemClick(Evento evento) {
+                                            showToast(evento.getId()+" "+evento.getTipo());
+                                        }
+                                    });
+                                    RecyclerView recyclerView = findViewById(R.id.listRecyclerView);
+                                    recyclerView.setHasFixedSize(true);
+                                    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                                    recyclerView.setAdapter(eventoAdapter);
+
+                                } else {
+                                    Log.d(TAG, "No such document");
+                                }
+                            } else {
+                                Log.d(TAG, "get failed with ", task.getException());
+                            }
                         }
                     });
                 }
@@ -107,11 +143,4 @@ public class listaEventos extends AppCompatActivity implements AdapterView.OnIte
         });
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(this,"Evento clicado",Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, ConsultarEvento.class);
-        intent.putExtra("idEvento", mEventosAdapter.getItem(i).getId());
-        startActivity(intent);
-    }
 }
