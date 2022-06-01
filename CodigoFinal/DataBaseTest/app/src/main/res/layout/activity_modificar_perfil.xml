@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ModificarPerfil">
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="top|center">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_user"
+            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/usuario"
+            app:endIconMode="none"
+            app:prefixText=" @">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:nextFocusForward="@id/et_nombre">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/confi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/imagen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/user"
+            app:srcCompat="@android:drawable/ic_menu_manage"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="277dp"
+            android:layout_height="277dp"
+            android:contentDescription="@string/action_sign_in"
+            app:layout_constraintBottom_toTopOf="@+id/chipGr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/confi"
+            app:layout_constraintVertical_bias="0.422"
+            tools:srcCompat="@tools:sample/avatars" />
+
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/amig"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imagen">
+        </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/til_biografia"
+    style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/bio"
+    android:paddingTop="@dimen/common_padding_default"
+    app:endIconMode="none">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_biografia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:imeOptions="actionDone">
+
+    </com.google.android.material.textfield.TextInputEditText>
+</com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/amig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/league_gothic"
+            android:text="Amigos"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/logro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/chipGr"/>
+
+        <TextView
+            android:id="@+id/logro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:fontFamily="@font/league_gothic"
+            android:text="Logros"
+            android:textSize="30sp"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/histo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/amig" />
+
+        <TextView
+            android:id="@+id/histo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/league_gothic"
+            android:text="Historial"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/logro"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

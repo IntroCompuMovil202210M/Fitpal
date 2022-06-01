@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Letras-->
+    <color name="letras_modo_claro">#FF221F1E</color>
+    <color name="letras_modo_oscuro">#FFFFFF</color>
+    <!-- Interfaz-->
+    <color name="colorUI_claro">#FF5271FF</color>
+    <color name="colorUI_claro_variacion">#FF2D3E8D</color>
+    <color name="colorUI_oscuro">#FFFFBD59</color>
+    <color name="colorUI_oscuro_variacion">#FFFF9958</color>
+    <!-- Fondo-->
+    <color name="fondo_claro">#FFFFFF</color>
+    <color name="fondo_oscuro">#FF101010</color>
+    <color name="colorPrimary">#3eaeae</color>
+    <color name="colorPrimaryDark">#226e6e</color>
+    <color name="colorAccent">#226e6e</color>
+
+</resources>
