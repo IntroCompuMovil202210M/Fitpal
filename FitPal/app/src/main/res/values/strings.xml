@@ -40,5 +40,6 @@
     <string name="asistentes">Asistentes</string>
     <string name="fecha">Fecha</string>
     <string name="duracion">Duracion</string>
+    <string name="registroValue">¿Eres nuevo? Registrate aquí</string>
 
 </resources>

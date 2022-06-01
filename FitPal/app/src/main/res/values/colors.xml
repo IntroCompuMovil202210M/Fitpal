@@ -11,5 +11,8 @@
     <!-- Fondo-->
     <color name="fondo_claro">#FFFFFF</color>
     <color name="fondo_oscuro">#FF101010</color>
+    <color name="colorPrimary">#3eaeae</color>
+    <color name="colorPrimaryDark">#226e6e</color>
+    <color name="colorAccent">#226e6e</color>
 
 </resources>

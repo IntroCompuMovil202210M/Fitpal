@@ -40,8 +40,8 @@
             </LinearLayout>
         </ScrollView>
 
-    </LinearLayout>
 
+    </LinearLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
@@ -50,3 +50,4 @@
         android:fitsSystemWindows="true"
         app:menu="@menu/menu" />
 </androidx.drawerlayout.widget.DrawerLayout>
+

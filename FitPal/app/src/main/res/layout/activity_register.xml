@@ -92,16 +92,21 @@
                     >
                 </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>}
+
         <LinearLayout
+            android:id="@+id/termsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <CheckBox
                 android:id="@+id/cb_terminos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/common_padding_default"></CheckBox>
+
             <TextView
+                android:id="@+id/textTermsTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/terminos"></TextView>
