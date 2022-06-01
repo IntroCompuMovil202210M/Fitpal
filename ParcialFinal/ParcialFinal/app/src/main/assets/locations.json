@@ -1,0 +1,54 @@
+{
+  "locations" :[
+    {
+      "latitude" : 40.71255799473267,
+      "longitude" : -74.0133814093898,
+      "name" : "One World Trade Center"
+    },
+    {
+      "latitude" : 40.70671148048407,
+      "longitude" : -73.99674771844597,
+      "name" : "Brooklyn Bridge"
+    },
+    {
+      "latitude" : 40.7489990812964,
+      "longitude" : -73.98555017821482,
+      "name" : "Empire State Building"
+    },
+    {
+      "latitude" : 40.76525909456808,
+      "longitude" : -74.00000011611024,
+      "name" : "Intrepid Sea, Air & Space Museum"
+    },
+    {
+      "latitude" : 40.74963266293152,
+      "longitude" : -73.9679872307805,
+      "name" : "United Nations Headquarters"
+    },
+    {
+      "latitude" : 40.768287803000014,
+      "longitude" : -73.97185391568017,
+      "name" : "Central Park Zoo"
+    },
+    {
+      "latitude" : 40.78355804180588,
+      "longitude" : -73.95884432495055,
+      "name" : "Solomon R. Guggenheim Museum"
+    },
+    {
+      "latitude" : 40.758645337640786,
+      "longitude" : -73.98560691098093,
+      "name" : "Times Square"
+    },
+    {
+      "latitude" : 40.6902281672228,
+      "longitude" : -74.04447530832238,
+      "name" : "Statue of Liberty"
+    },
+    {
+      "latitude" : 40.8301101841859,
+      "longitude" : -73.92493685076101,
+      "name" : "Yankee Stadium"
+    }
+  ]
+}
