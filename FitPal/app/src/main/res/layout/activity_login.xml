@@ -100,9 +100,9 @@
             android:id="@+id/textView_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/cuenta_existe"
-            android:textAlignment="center"
-            android:paddingTop="@dimen/common_padding_default" />
+            android:paddingTop="@dimen/common_padding_default"
+            android:text="@string/registroValue"
+            android:textAlignment="center" />
     </LinearLayout>
 
     <ImageView

@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/league_gothic"
                     android:text="Usuario"
-                    android:textColor="@color/fondo_oscuro"
+                    android:textColor="@color/colorUI_oscuro"
                     android:textSize="40sp"
                     app:layout_constraintBottom_toTopOf="@+id/confi"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="BIOGRAFIA"
-                    android:textColor="@color/fondo_oscuro" />
+                    android:textColor="@color/colorUI_oscuro" />
 
                 <TextView
                     android:id="@+id/amig"
@@ -86,6 +86,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/league_gothic"
                     android:text="Amigos"
+                    android:textColor="@color/colorUI_oscuro"
                     android:textSize="30sp"
                     app:layout_constraintBottom_toTopOf="@+id/logro"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -97,11 +98,17 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cerrar Sesion" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/menuInferior_map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.9"
+        android:layout_weight="0.57"
         app:menu="@menu/navigation" >
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>

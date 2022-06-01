@@ -1,5 +1,7 @@
 package com.gitgud.fitpal;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,6 +24,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -59,28 +63,27 @@ public class RegisterActivity extends AppCompatActivity {
         email = (TextView) findViewById(R.id.et_correo);
         password = (TextView) findViewById(R.id.et_pass);
         password_verify = (TextView) findViewById(R.id.et_vpass);
-        /*boton = findViewById(R.id.button1);
-        boton.setOnClickListener(openActivity);*/
         login = (TextView) findViewById(R.id.textView);
         login.setOnClickListener(loginActivity_bt);
         register = findViewById(R.id.bt_register);
         register.setOnClickListener(registrar);
+        TextView terminos = findViewById(R.id.textTermsTV);
+        terminos.setOnClickListener((View.OnClickListener) terminos_bt);
     }
 
-
-    /*private View.OnClickListener openActivity = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent intent = new Intent(RegisterActivity.this, UploadImageActivity.class);
-            startActivity(intent);
-        }
-    };*/
     private View.OnClickListener loginActivity_bt = new android.view.View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
+        }
+    };
+    private View.OnClickListener terminos_bt= new android.view.View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(RegisterActivity.this, termsActivity.class);
+            startActivity(intent);
         }
     };
     private View.OnClickListener registrar = new View.OnClickListener() {
@@ -130,6 +133,7 @@ public class RegisterActivity extends AppCompatActivity {
                                             nuevoUsuario.setPassword(contraseña);
                                             myRef= database.getReference(PATH_USERS+user.getUid());
                                             myRef.setValue(nuevoUsuario);
+                                            db.collection("Usuario").document(user.getUid()).set(nuevoUsuario);
                                             Toast.makeText(RegisterActivity.this, "¡Registro Exitoso!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(RegisterActivity.this, CompleteRegister.class);
                                             startActivity(intent);

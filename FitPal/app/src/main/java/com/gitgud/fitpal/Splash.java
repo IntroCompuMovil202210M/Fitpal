@@ -57,7 +57,7 @@ public class Splash extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         for (QueryDocumentSnapshot document : task.getResult()) {
                                             String idDco = document.getId().toString();
-                                            if (user.getEmail().equals(idDco)){
+                                            if (user.getUid().equals(idDco)){
                                                 if ((boolean) document.getData().get("perfilCompleto")) {
                                                     startActivity(new Intent(Splash.this, HuellaActivity.class));
                                                     finish();
